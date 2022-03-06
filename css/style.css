@@ -45,3 +45,30 @@ td:nth-child(2) {
   border-radius: 2px;
   padding: 1px 3px;
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #222;
+    color: #ddd;
+  }
+
+  input[type='text'] {
+    background-color: rgb(18, 18, 18);
+    border-color: rgb(83 83 83);
+  }
+
+  a {
+    color: rgb(32, 185, 255);
+  }
+
+  td {
+    border-color: rgb(83 83 83);
+  }
+  td:nth-child(1) {
+    background-color: rgb(18, 18, 18);
+  }
+
+  .code {
+    background-color: rgb(18, 18, 18);
+  }
+}
