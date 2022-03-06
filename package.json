@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "url-viewer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A simple website to parse and view complex urls",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
