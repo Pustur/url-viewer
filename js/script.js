@@ -1,5 +1,5 @@
 // Functions
-function urlToObject(entries) {
+function urlToObject(url) {
   const keys = [
     'hash',
     'host',
@@ -16,21 +16,15 @@ function urlToObject(entries) {
 
   return Object.fromEntries(
     keys
-      .filter(key => typeof entries[key] !== 'undefined')
-      .map(key => [key, entries[key]]),
+      .filter(key => typeof url[key] !== 'undefined')
+      .map(key => [key, url[key]]),
   );
 }
 
-function parseSearchParams(search) {
-  return Object.fromEntries(Array.from(new URLSearchParams(search).entries()));
-}
-
 function urlToHtml(url) {
-  const searchParams = parseSearchParams(url.search.slice(1));
-
   return [
-    ['URL Parts', url],
-    ['Query String Splitter', searchParams],
+    ['URL Parts', urlToObject(url)],
+    ['Query String Splitter', Object.fromEntries(url.searchParams.entries())],
   ]
     .filter(([, obj]) => Object.keys(obj).length > 0)
     .map(
@@ -53,7 +47,7 @@ function urlToHtml(url) {
 }
 
 function renderOutput() {
-  output.innerHTML = urlToHtml(urlToObject(new URL(input.value)));
+  output.innerHTML = urlToHtml(new URL(input.value));
 }
 
 // Variables
