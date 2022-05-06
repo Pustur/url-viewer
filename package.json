@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "url-viewer",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A simple website to parse and view complex urls",
   "scripts": {
     "format": "prettier -w .",
