@@ -1,3 +1,21 @@
+:root {
+  --color-bg: #eee;
+  --color-elements-bg: #ccc;
+  --color-fg: #222;
+  --color-border: #999;
+  --color-link: #25f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #222;
+    --color-elements-bg: #111;
+    --color-fg: #ddd;
+    --color-border: #555;
+    --color-link: #2bf;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -9,17 +27,27 @@ html {
   font-family: sans-serif;
 }
 
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+}
+
+a {
+  color: var(--color-link);
+}
+
 input[type='text'] {
   width: 100%;
   height: 40px;
   line-height: 40px;
-  border: 1px solid rgb(155, 155, 155);
+  border: 1px solid var(--color-border);
   border-radius: 4px;
   padding-inline: 8px;
   margin-block: 8px;
   font-size: inherit;
   font-family: inherit;
   color: inherit;
+  background-color: var(--color-elements-bg);
 }
 
 table {
@@ -27,12 +55,12 @@ table {
 }
 
 td {
-  border: 1px solid rgb(155, 155, 155);
+  border: 1px solid var(--color-border);
   padding: 0.5rem;
 }
 td:nth-child(1) {
   font-family: monospace;
-  background-color: rgb(204, 204, 204);
+  background-color: var(--color-elements-bg);
 }
 td:nth-child(2) {
   word-break: break-all;
@@ -40,35 +68,8 @@ td:nth-child(2) {
 
 .code {
   font-family: monospace;
-  background-color: rgb(204, 204, 204);
+  background-color: var(--color-elements-bg);
   display: inline-block;
   border-radius: 2px;
   padding: 1px 3px;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #222;
-    color: #ddd;
-  }
-
-  input[type='text'] {
-    background-color: rgb(18, 18, 18);
-    border-color: rgb(83 83 83);
-  }
-
-  a {
-    color: rgb(32, 185, 255);
-  }
-
-  td {
-    border-color: rgb(83 83 83);
-  }
-  td:nth-child(1) {
-    background-color: rgb(18, 18, 18);
-  }
-
-  .code {
-    background-color: rgb(18, 18, 18);
-  }
 }
